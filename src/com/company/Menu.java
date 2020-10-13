@@ -22,6 +22,9 @@ public class Menu{
         switch (choixUtilisateur) {
             case 1:
                 //ajouter Fonction démarrer
+                game.Players();
+                game.random();
+                game.affichagePlateau();
                 break;
             case 2:
                 //ajouter Fonction règles
