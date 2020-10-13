@@ -9,8 +9,14 @@ public class Menu{
         //On va créer le menu principal avec 4 options.
         Scanner choix = new Scanner(System.in);
         int choixUtilisateur;
-
-        System.out.println("nom"+"prenom");
+        //Menu visuel proposé à l'utilisateur
+        System.out.println("**********************************************************");
+        System.out.println("Choissisez l'option souhaiter entre 1 et 4.");
+        System.out.println("1. Start");
+        System.out.println("2. Règles");
+        System.out.println("3. Scores");
+        System.out.println("4. Quittez");
+        System.out.println("**********************************************************");
 
         choixUtilisateur = choix.nextInt();
         switch (choixUtilisateur) {
@@ -19,11 +25,21 @@ public class Menu{
                 break;
             case 2:
                 //ajouter Fonction règles
+                affichageRegles();
+
                 break;
             case 3:
                 //ajouter Fonction score
                 break;
+            case 4:
+                //ajouter Fonction Quittez
+                break;
 
         }
+    }
+
+    public static void affichageRegles(){
+
+
     }
 }
