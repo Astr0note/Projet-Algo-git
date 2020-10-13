@@ -10,7 +10,7 @@ public class Menu{
         Scanner choix = new Scanner(System.in);
         int choixUtilisateur;
 
-        System.out.println("nom"+ \+"prenom");
+        System.out.println("nom"+"prenom");
 
         choixUtilisateur = choix.nextInt();
         switch (choixUtilisateur) {
