@@ -40,6 +40,14 @@ public class Menu{
 
     public static void affichageRegles(){
 
+        System.out.println("Règles");
+        System.out.println("Pendant son tour un joueur peut déplacer son pion d’une case (verticalement ou\n" +
+                "horizontalement), puis il détruit une case du plateau.\n" +
+                "Le dernier joueur pouvant encore se déplacer gagne.");
+        System.out.println("Attention :\n" +
+                "- Un joueur ne peut pas détruire une case occupée.\n" +
+                "- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée.\n" +
+                "- Un joueur bloqué pendant un tour est déclaré perdant.");
 
     }
 }
