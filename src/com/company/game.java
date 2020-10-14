@@ -72,12 +72,47 @@ public class game {
 
 
     /**
+     * Permet de vérifier les cases autour des deux joueurs
+     * pour savoir s'il est bloqué ou non
+     * @param Plateau
+     * @return un boolean. true = joueur bloqué.
+     */
+    public static boolean estBloque(String[][] Plateau) {
+
+        boolean bloque = false;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 11; j++) {
+                if (Plateau[i][j] == "X ") {
+                    if (Plateau[i + 1][j] == "" && Plateau[i][j + 1] == "" && Plateau[i - 1][j] == "" && Plateau[i][j - 1] == "") {
+                        //Joueur bloqué
+                        bloque = true;
+                        //Fin de partie
+                    } else {
+                        //Joueur non bloqué
+                    }
+                }
+                if (Plateau[i][j] == "O ") {
+                    if (Plateau[i + 1][j] == "" && Plateau[i][j + 1] == "" && Plateau[i - 1][j] == "" && Plateau[i][j - 1] == "") {
+                        //Joueur bloqué
+                        bloque = true;
+                        //Fin de partie
+                    } else {
+                        //Joueur non bloqué
+                    }
+                }
+            }
+        }
+       return bloque;
+    }
+
+
+    /**
      * Fonction base qui va se comporter comme une fonction main, qui va appeler
      * les différentes fonction du jeu
      */
     public static void base(){
 
-        String pseudo1; String pseudo2; String[][] plateau;
+        String pseudo1; String pseudo2; String[][] plateau;boolean bloque;
         int x1 = 4; int y1=5 ;      // Position initiale des deux joueurs
         int x2 = 5; int y2 = 5;
 
@@ -89,6 +124,13 @@ public class game {
         plateau = fontionPlateau(x1,y1,x2,y2);
         premierAleatoire(pseudo1,pseudo2);
 
+        bloque = estBloque(plateau);
+
+        if(estBloque == true){
+            //Fin de partie
+        }else {
+            //Le joueur peut jouer
+        }
 
     }
 }
