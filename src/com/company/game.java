@@ -34,11 +34,11 @@ public class game {
 
     /**
      * Place les joueurs en fonction des coordonnées x et y reçues en paramètre
-     * @param x1
-     * @param y1
-     * @param x2
-     * @param y2
-     * @return le tableau avec les valeurs
+     * @param x1 Coordonnée x du premier joueur
+     * @param y1 Coordonnée y du premier joueur
+     * @param x2 Coordonnée x du second joueur
+     * @param y2 Coordonnée y du second jour
+     * @return Tableau avec les valeurs
      */
     public static String[][] fontionPlateau(int x1, int y1, int x2,int y2){
         String[][] plateau = new String[10][11];
@@ -72,12 +72,37 @@ public class game {
 
 
     /**
+     * Va exectuer dans un ordre précis les actions de déplacement du joueur
+     * @param Plateau
+     */
+    public static void deplacement(String[][] Plateau){
+
+        boolean bloque;
+        bloque = Bloquage.estBloque(Plateau);
+        if(bloque == true){
+            //Fin de partie
+            System.out.println("Le joueur est bloqué!");
+            System.out.println("Fin de la partie");
+            Menu.choix();
+        }else {
+            System.out.println("Pas bloqué");
+            //Le joueur peut jouer
+
+            //here : Fonction déplacement de Mathis
+            //here : Fonction destruction de Martin
+        }
+
+
+    }
+
+
+    /**
      * Fonction base qui va se comporter comme une fonction main, qui va appeler
      * les différentes fonction du jeu
      */
     public static void base(){
 
-        String pseudo1; String pseudo2; String[][] plateau;
+        String pseudo1; String pseudo2; String[][] plateau;boolean enCours = true;
         int x1 = 4; int y1=5 ;      // Position initiale des deux joueurs
         int x2 = 5; int y2 = 5;
 
@@ -88,6 +113,10 @@ public class game {
 
         plateau = fontionPlateau(x1,y1,x2,y2);
         premierAleatoire(pseudo1,pseudo2);
+
+
+            //A faire boucler d'une certaines manière....
+            deplacement(plateau);
 
 
     }
