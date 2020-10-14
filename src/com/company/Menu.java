@@ -8,7 +8,7 @@ public class Menu{
 
         //On va créer le menu principal avec 4 options.
         Scanner choix = new Scanner(System.in);
-        int choixUtilisateur;
+        String choixUtilisateur;
         //Menu visuel proposé à l'utilisateur
         System.out.println("**********************************************************");
         System.out.println("Choissisez l'option souhaiter entre 1 et 4.");
@@ -18,26 +18,33 @@ public class Menu{
         System.out.println("4. Quittez");
         System.out.println("**********************************************************");
 
-        choixUtilisateur = choix.nextInt();
-        switch (choixUtilisateur) {
-            case 1:
-                //ajouter Fonction démarrer
-                game.base();    // Fichier du jeu
-                break;
-            case 2:
-                //ajouter Fonction règles
-                affichageRegles();
+        choixUtilisateur = choix.next(); //On récupère ce que tape l'utilisateur
+        if ((choixUtilisateur.matches("^[1-4].*"))) {
+            int choixUser = Integer.parseInt(choixUtilisateur);
+            switch (choixUser) { //En fonction de son choix on lance un cas différent
+                case 1:
+                    //ajouter Fonction démarrer
+                    game.base();    // Fichier du jeu
+                    break;
+                case 2:
+                    //ajouter Fonction règles
+                    affichageRegles();
 
-                break;
-            case 3:
-                //ajouter Fonction score
-                break;
-            case 4:
-                //ajouter Fonction Quittez
-                break;
-
+                    break;
+                case 3:
+                    //ajouter Fonction score
+                    break;
+                case 4:
+                    //ajouter Fonction Quittez
+                    break;
+            }
         }
-    }
+        else {
+            System.out.println("/!\\  Choix incorrect, veuillez choisir une option entre 1 et 4. /!\\  ");
+            choix();
+
+            }
+        }
 
     public static void affichageRegles(){
 
