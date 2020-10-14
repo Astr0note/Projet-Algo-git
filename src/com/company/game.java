@@ -33,23 +33,42 @@ public class game {
     }
 
     /**
-     * Affichage tableau 11x10
+     * Place les joueurs en fonction des coordonnées x et y reçues en paramètre
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
+     * @return le tableau avec les valeurs
      */
-    public static void affichagePlateau(){
+    public static String[][] fontionPlateau(int x1, int y1, int x2,int y2){
         String[][] plateau = new String[10][11];
         int i; int j;
 
         for (i=0;i<10;i++){
             for (j=0;j<11;j++){
                 plateau[i][j] = "☐ ";
-                plateau[5][6] = "X";
-                plateau[6][6] = "o";
+            }
+        }
+        plateau[x1][y1] = "X ";
+        plateau[x2][y2] = "O ";
+
+        affichagePlateau(plateau);
+        return plateau;
+    }
+
+    /**
+     * Affichage du plateau en paramètre, reçu de fontionPlateau
+     * @param plateau
+     */
+    public static void affichagePlateau(String[][] plateau){
+
+        for (int i=0;i<10;i++){
+            for (int j=0;j<11;j++){
                 System.out.print(plateau[i][j]);
             }
             System.out.println();
         }
     }
-
 
 
     /**
@@ -58,14 +77,18 @@ public class game {
      */
     public static void base(){
 
-        String pseudo1; String pseudo2;
+        String pseudo1; String pseudo2; String[][] plateau;
+        int x1 = 4; int y1=5 ;      // Position initiale des deux joueurs
+        int x2 = 5; int y2 = 5;
 
         System.out.println("Entrez le pseudo du joueur 1:");
         pseudo1= Joueurs();
         System.out.println("Entrez le pseudo du joueur 2:");
         pseudo2 = Joueurs();
 
-        affichagePlateau();
+        plateau = fontionPlateau(x1,y1,x2,y2);
         premierAleatoire(pseudo1,pseudo2);
+
+
     }
 }
