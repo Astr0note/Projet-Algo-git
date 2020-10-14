@@ -1,21 +1,21 @@
 package com.company;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class game {
 
-    static String joueur1 ;
-    static String joueur2 ;
+    /**
+     * Demande à l'utilisateur de choisir son pseudo
+     * @return le pseudo du joueur (String)
+     */
+    public static String Players(){
 
-    public static void Players(){
 
         Scanner player = new Scanner(System.in);
 
-        System.out.println("Pseudo joueur 1:");
-        joueur1 = player.next();
-
-        System.out.println("Pseudo joueur 2:");
-        joueur2 = player.next();
+        String players = player.next();
+        return players;
 
     }
 
@@ -24,5 +24,21 @@ public class game {
     }
 
     public static void affichagePlateau(){
+    }
+
+    /**
+     * Fonction base qui va se comporter comme une fonction main, qui va appeler
+     * les différentes fonction du jeu
+     */
+    public static void base(){
+
+        String pseudo1; String pseudo2;
+
+        System.out.println("Entrez le pseudo du joueur 1:");
+        pseudo1= Players();
+        System.out.println("Entrez le pseudo du joueur 2:");
+        pseudo2 = Players();
+
+
     }
 }
