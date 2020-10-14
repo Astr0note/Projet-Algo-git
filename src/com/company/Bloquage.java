@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Bloquage {
 
     /**
@@ -12,7 +14,7 @@ public class Bloquage {
         boolean bloque = false;
         String joueur2 = "O ";
         String joueur1 = "X ";
-        String caseDetruite = "☐ ";
+        String caseDetruite = "# ";
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 11; j++) {
