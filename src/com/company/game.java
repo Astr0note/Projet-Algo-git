@@ -126,7 +126,7 @@ public class game {
 
         bloque = estBloque(plateau);
 
-        if(estBloque == true){
+        if(bloque == true){
             //Fin de partie
         }else {
             //Le joueur peut jouer
