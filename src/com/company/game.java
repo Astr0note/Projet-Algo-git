@@ -1,6 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class game {
@@ -16,7 +15,21 @@ public class game {
         return players;
     }
 
-    public static void random(){
+    /**
+     * Choisis quel joueur va jouer en premier, de façon aléatoire
+     * @param pseudo1
+     * @param pseudo2
+     */
+    public static void random(String pseudo1, String pseudo2){
+        int min = 0; int max = 2;
+
+        int random = (int)(Math.random()*(min-max))+max;
+
+        if(random == 1){
+            System.out.println("C'est à "+pseudo1+" de jouer en premier");
+        }else {
+            System.out.println("C'est à "+pseudo2+" de jouer en premier");
+        }
 
     }
 
@@ -51,5 +64,7 @@ public class game {
         pseudo2 = Players();
 
         affichagePlateau();
+
+        random(pseudo1,pseudo2);
     }
 }
