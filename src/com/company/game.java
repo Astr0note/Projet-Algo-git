@@ -42,8 +42,8 @@ public class game {
         for (i=0;i<10;i++){
             for (j=0;j<11;j++){
                 plateau[i][j] = "☐ ";
-                plateau[5][6] = "X";
-                plateau[6][6] = "o";
+                plateau[5][4] = "X ";
+                plateau[5][5] = "o ";
                 System.out.print(plateau[i][j]);
             }
             System.out.println();
