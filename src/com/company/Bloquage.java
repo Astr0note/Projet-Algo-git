@@ -114,7 +114,6 @@ public class Bloquage {
             }
         }
 
-
         return bloque;
     }
 

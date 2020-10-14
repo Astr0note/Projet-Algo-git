@@ -1,8 +1,6 @@
 package com.company;
 
 import java.util.Scanner;
-
-
 public class game {
 
     /**
@@ -90,7 +88,10 @@ public class game {
             System.out.println("Pas bloqué");
             //Le joueur peut jouer
 
+            //here : Fonction déplacement de Mathis
             Plateau = Mouvement.mouvemement(Plateau);
+            affichagePlateau(Plateau);
+
             Plateau = Destruction(Plateau);
             affichagePlateau(Plateau);
         }
@@ -101,7 +102,10 @@ public class game {
     public static String[][] Destruction(String[][] plateau){
         int X; int Y;
         Scanner choix = new Scanner(System.in);
-        X = choix.nextInt(); Y = choix.nextInt();
+        System.out.println("valeur de X ?");
+        X = choix.nextInt();
+        System.out.println("Valeur de Y ?");
+        Y = choix.nextInt();
         if(plateau[X][Y] == "# " ){
             System.out.println("impossible");
         }
@@ -134,6 +138,7 @@ public class game {
 
             //A faire boucler d'une certaines manière....
             deplacement(plateau);
+
 
     }
 }
