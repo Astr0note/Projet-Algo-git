@@ -22,6 +22,7 @@ public class Mouvement {
                             }
                         }
                     }
+                    break;
                 case "q":
                     //L'utilisateur choisi q pour aller vers la gauche
                     // gauche = j - 1
@@ -33,6 +34,7 @@ public class Mouvement {
                             }
                         }
                     }
+                    break;
                 case "s":
                     //L'utilisateur choisi s pour aller vers le bas
                     // gauche = i + 1
@@ -44,6 +46,7 @@ public class Mouvement {
                             }
                         }
                     }
+                    break;
                 case "d":
                     //L'utilisateur choisi q pour aller vers la gauche
                     // gauche = j - 1
@@ -55,6 +58,10 @@ public class Mouvement {
                             }
                         }
                     }
+                    break;
+                //default:
+                   // System.out.println("Commande de déplacement inexistante");
+                   // mouvemement(plateau);
             }
         }
         return plateau;

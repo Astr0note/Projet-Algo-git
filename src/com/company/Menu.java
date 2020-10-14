@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Menu{
 
     public static void choix() {
-
-        //On va créer le menu principal avec 4 options.
+        //On va créer le menu principal avec 4 options
         Scanner choix = new Scanner(System.in);
         String choixUtilisateur;
         //Menu visuel proposé à l'utilisateur
@@ -61,6 +60,5 @@ public class Menu{
                 "- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée.\n" +
                 "- Un joueur bloqué pendant un tour est déclaré perdant.");
         choix();
-
     }
 }
