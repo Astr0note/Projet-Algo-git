@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Scanner;
-
 public class game {
 
     /**
@@ -43,6 +42,8 @@ public class game {
         for (i=0;i<10;i++){
             for (j=0;j<11;j++){
                 plateau[i][j] = "☐ ";
+                plateau[5][6] = "X";
+                plateau[6][6] = "o";
                 System.out.print(plateau[i][j]);
             }
             System.out.println();
