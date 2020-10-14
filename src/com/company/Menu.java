@@ -49,6 +49,7 @@ public class Menu{
                 "- Un joueur ne peut pas détruire une case occupée.\n" +
                 "- Un joueur ne peut pas occuper une case détruite ou une case déjà occupée.\n" +
                 "- Un joueur bloqué pendant un tour est déclaré perdant.");
+        choix();
 
     }
 }
