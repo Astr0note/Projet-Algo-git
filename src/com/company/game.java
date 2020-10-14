@@ -89,10 +89,25 @@ public class game {
             //Le joueur peut jouer
 
             //here : Fonction déplacement de Mathis
-            //here : Fonction destruction de Martin
+            Plateau = Destruction(Plateau);
+            affichagePlateau(Plateau);
         }
 
 
+    }
+
+    public static String[][] Destruction(String[][] plateau){
+        int X; int Y;
+        Scanner choix = new Scanner(System.in);
+        X = choix.nextInt(); Y = choix.nextInt();
+        if(plateau[X][Y] == "# " ){
+            System.out.println("impossible");
+        }
+        else{
+            plateau[X][Y] = "# ";
+        }
+
+        return plateau;
     }
 
 
@@ -117,23 +132,6 @@ public class game {
 
             //A faire boucler d'une certaines manière....
             deplacement(plateau);
-
-
-    }
-    public static String[][] Destruction(String[][] plateau){
-        int X; int Y;
-        Scanner choix = new Scanner(System.in);
-        X = choix.nextInt(); Y = choix.nextInt();
-        if(plateau[X][Y] == "# " ){
-            System.out.println("impossible");
-        }
-        else{
-            plateau[X][Y] = "# ";
-        }
-
-        return plateau;
-
-
 
 
     }
