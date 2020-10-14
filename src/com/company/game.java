@@ -99,7 +99,10 @@ public class game {
     public static String[][] Destruction(String[][] plateau){
         int X; int Y;
         Scanner choix = new Scanner(System.in);
-        X = choix.nextInt(); Y = choix.nextInt();
+        System.out.println("valeur de X ?");
+        X = choix.nextInt();
+        System.out.println("Valeur de Y ?");
+        Y = choix.nextInt();
         if(plateau[X][Y] == "# " ){
             System.out.println("impossible");
         }
