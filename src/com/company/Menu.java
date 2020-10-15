@@ -3,7 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class Menu{
-
+    /**
+     * Affichage Menu avec différents choix
+     */
     public static void choix() {
         //On va créer le menu principal avec 4 options
         Scanner choix = new Scanner(System.in);
@@ -49,6 +51,9 @@ public class Menu{
             }
         }
 
+    /**
+     * Affichage des règles suivi d'un retour menu
+     */
     public static void affichageRegles(){
 
         System.out.println("Règles");
