@@ -99,7 +99,7 @@ public class game {
             }
 
             //here : Fonction déplacement de Mathis
-            Plateau = Mouvement.mouvemement(Plateau);
+            Plateau = Mouvement.mouvementJoueur1(Plateau);
             affichagePlateau(Plateau);
 
             Plateau = Destruction(Plateau);
