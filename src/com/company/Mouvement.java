@@ -105,7 +105,6 @@ public class Mouvement {
                         }
                     }else{
             System.out.println("Commande de déplacement inexistante");
-            System.out.println("Veuillez vous déplacer avec Z/Q/S/D");
             mouvementJoueur1(plateau);
         }
                     return plateau;
@@ -129,7 +128,6 @@ public class Mouvement {
 
         if ((déplacement.matches("^[zqsdZQSDmM].*"))) {
             String déplacer = déplacement.toLowerCase();
-            if ((déplacement.matches("^[mM].*")))
             switch (déplacer) {
                 case "z":
                     //L'utilisateur choisi z pour aller vers le haut
@@ -214,7 +212,6 @@ public class Mouvement {
             }
         }else{
             System.out.println("Commande de déplacement inexistante");
-            System.out.println("Veuillez vous déplacer avec Z/Q/S/D");
             mouvementJoueur2(plateau);
         }
         return plateau;
