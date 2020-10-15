@@ -10,8 +10,13 @@ public class game {
     public static String Joueurs(){
         Scanner player = new Scanner(System.in);
 
-        String joueur = player.next();
-        return joueur;
+        String pseudo = "";
+        int longueurPseudo = pseudo.length();
+        while ( (longueurPseudo < 2 || (longueurPseudo > 10)) ){
+            pseudo = player.next();
+            longueurPseudo = pseudo.length();
+        }
+        return pseudo;
     }
 
     /**
@@ -135,10 +140,9 @@ public class game {
         int x1 = 4; int y1=5 ;      // Position initiale des deux joueurs
         int x2 = 5; int y2 = 5;
         int tour = 1;
-
-        System.out.println("Entrez le pseudo du joueur 1:");
+        System.out.println("Entrez le pseudo du joueur 1 (entre 2 et 10 caractères):");
         pseudo1= Joueurs();
-        System.out.println("Entrez le pseudo du joueur 2:");
+        System.out.println("Entrez le pseudo du joueur 2 (entre 2 et 10 caractères):");
         pseudo2 = Joueurs();
 
         premierJoueur = premierAleatoire(pseudo1,pseudo2);
