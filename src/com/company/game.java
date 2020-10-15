@@ -92,6 +92,7 @@ public class game {
         if(bloque == true){ //Fin de partie
             System.out.println("Le joueur est bloqué!");
             System.out.println("Fin de la partie");
+            Menu.score(tour, joueur1, joueur2);
             Menu.choix();
         }else { //Le joueur peut jouer
 
