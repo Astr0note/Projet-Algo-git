@@ -27,14 +27,16 @@ public class Mouvement {
                    for (i = 0; i < 10; i++) {
                        for (j = 0; j < 11; j++) {
                            if (plateau[i][j] == joueur1) {
-                                           if (i == 0) {
-                                               break;
-                                           }else{
-                                               plateau[i][j] = "☐ ";
-                                               plateau[i - 1][j] = "X ";
-                                           }
-                                       }
-                                   }
+                               if (i == 0) {
+                                   System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                   mouvemement(plateau);
+                                   break;
+                               }else{
+                                   plateau[i][j] = "☐ ";
+                                   plateau[i - 1][j] = "X ";
+                               }
+                           }
+                       }
                    }
                    break;
                    case "q":
@@ -44,6 +46,8 @@ public class Mouvement {
                            for (j = 0; j < 11; j++) {
                                if (plateau[i][j] == joueur1) {
                                    if(j == 0) {
+                                       System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                       mouvemement(plateau);
                                        break;
                                                } else{
                                                    plateau[i][j] = "☐ ";
@@ -62,6 +66,8 @@ public class Mouvement {
                                for (j = 0; j < 11; j++) {
                                    if (plateau[i][j] == joueur1 && stop == 0) {
                                        if (i == 9) {
+                                           System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                           mouvemement(plateau);
                                            break;
                                        } else {
                                            plateau[i][j] = "☐ ";
@@ -79,6 +85,8 @@ public class Mouvement {
                                    for (j = 0; j < 11; j++) {
                                        if (plateau[i][j] == joueur1) {
                                            if (j == 10) {
+                                               System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                               mouvemement(plateau);
                                                break;
                                            } else{
                                                plateau[i][j] = "☐ ";
