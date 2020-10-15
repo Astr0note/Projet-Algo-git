@@ -68,9 +68,11 @@ public class game {
      * @param plateau
      */
     public static void affichagePlateau(String[][] plateau){
-
+        int j;
+        System.out.println("  "+"0 "+"1 "+"2 "+"3 "+"4 "+"5 "+"6 "+"7 "+"8 "+"9 "+"10 ");
         for (int i=0;i<10;i++){
-            for (int j=0;j<11;j++){
+            System.out.print(i+" ");
+            for (j=0;j<11;j++){
                 System.out.print(plateau[i][j]);
             }
             System.out.println();
