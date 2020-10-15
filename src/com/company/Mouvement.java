@@ -19,6 +19,10 @@ public class Mouvement {
         System.out.println("Déplacer vous avec Z/Q/S/D");
         déplacement = mouvementUtilisateur.next();
 
+        if ((déplacement.matches("^[mM].*"))) {
+            String Quittez = déplacement.toLowerCase();
+            Quit.quittez();
+        }
         if ((déplacement.matches("^[zqsdZQSD].*"))) {
             String déplacer = déplacement.toLowerCase();
              switch (déplacer) {
@@ -126,7 +130,11 @@ public class Mouvement {
         System.out.println("Déplacer vous avec Z/Q/S/D");
         déplacement = mouvementUtilisateur.next();
 
-        if ((déplacement.matches("^[zqsdZQSDmM].*"))) {
+        if ((déplacement.matches("^[mM].*"))) {
+            String Quiittez = déplacement.toLowerCase();
+            Quit.quittez();
+        }
+        if ((déplacement.matches("^[zqsdZQSD].*"))) {
             String déplacer = déplacement.toLowerCase();
             switch (déplacer) {
                 case "z":

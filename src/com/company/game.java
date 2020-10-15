@@ -129,8 +129,16 @@ public class game {
         System.out.println("quel case voulez vous détruire ?");
         System.out.println("valeur de Y ?");
         choixUtilisateurX = choix.next();//On récupère X de l'utilisateur
+        if ((choixUtilisateurX.matches("^[mM].*"))) {
+            String Quittez = choixUtilisateurX.toLowerCase();
+            Quit.quittez();
+        }
         System.out.println("Valeur de X ?");
         choixUtilisateurY = choix.next();//On récupère Y de l'utilisateur
+        if ((choixUtilisateurY.matches("^[mM].*"))) {
+            String Quittez = choixUtilisateurY.toLowerCase();
+            Quit.quittez();
+        }
         if(choixUtilisateurX.matches("^[0-9].*") && choixUtilisateurY.matches("^[0-9].*")) {
             int X = Integer.parseInt(choixUtilisateurX); //On vérifie que les valeurs soient bien des chiffres
             int Y = Integer.parseInt(choixUtilisateurY);
