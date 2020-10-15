@@ -120,6 +120,10 @@ public class game {
         String choixUtilisateurX;
         String choixUtilisateurY;
 
+        System.out.println("**********************************************************");
+        System.out.println("phase de destruction");
+        System.out.println("**********************************************************");
+        System.out.println("quel case voulez vous détruire ?");
         System.out.println("valeur de X ?");
         choixUtilisateurX = choix.next();//On récupère X de l'utilisateur
         System.out.println("Valeur de Y ?");
@@ -128,16 +132,16 @@ public class game {
             int X = Integer.parseInt(choixUtilisateurX); //On vérifie que les valeurs soient bien des chiffres
             int Y = Integer.parseInt(choixUtilisateurY);
             if (X < 0 || X > 9 || Y < 0 || Y > 10) { //Que la valeur existe bien dans le tableau
-                System.out.println("La case demandée n'existe pas");
+                System.out.println("/! La case demandée n'existe pas !/");
                 Destruction(plateau);
             } else if (plateau[X][Y] != "☐ ") {
-                System.out.println("La case n'est pas disponible"); //Que la case soit disponible (ni un joueur ni une case détruite)
+                System.out.println("/! La case n'est pas disponible !/"); //Que la case soit disponible (ni un joueur ni une case détruite)
                 Destruction(plateau);
             } else {
                 plateau[X][Y] = "# "; //On détruis la case
             }
         }else {
-            System.out.println("Erreur, veuillez bien insérer des coordonnées"); //Erreur dans la saisie X Y
+            System.out.println("/! Erreur, veuillez bien insérer des coordonnées !/"); //Erreur dans la saisie X Y
             Destruction(plateau);
         }
 
