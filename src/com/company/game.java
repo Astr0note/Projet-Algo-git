@@ -69,7 +69,7 @@ public class game {
      */
     public static void affichagePlateau(String[][] plateau){
         int j;
-        System.out.println("  "+"0 "+"1 "+"2 "+"3 "+"4 "+"5 "+"6 "+"7 "+"8 "+"9 "+"10 ");
+        System.out.println("  "+"0 "+"1 "+"2 "+"3 "+"4 "+"5 "+"6 "+"7 "+"8 "+"9 "+"10 "+" X");
         for (int i=0;i<10;i++){
             System.out.print(i+" ");
             for (j=0;j<11;j++){
@@ -77,6 +77,7 @@ public class game {
             }
             System.out.println();
         }
+        System.out.println("Y");
     }
 
 
@@ -126,9 +127,9 @@ public class game {
         System.out.println("phase de destruction");
         System.out.println("**********************************************************");
         System.out.println("quel case voulez vous détruire ?");
-        System.out.println("valeur de X ?");
+        System.out.println("valeur de Y ?");
         choixUtilisateurX = choix.next();//On récupère X de l'utilisateur
-        System.out.println("Valeur de Y ?");
+        System.out.println("Valeur de X ?");
         choixUtilisateurY = choix.next();//On récupère Y de l'utilisateur
         if(choixUtilisateurX.matches("^[0-9].*") && choixUtilisateurY.matches("^[0-9].*")) {
             int X = Integer.parseInt(choixUtilisateurX); //On vérifie que les valeurs soient bien des chiffres
