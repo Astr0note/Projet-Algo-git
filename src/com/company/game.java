@@ -97,16 +97,21 @@ public class game {
     }
 
     public static String[][] Destruction(String[][] plateau){
-        int X; int Y;
+
         Scanner choix = new Scanner(System.in);
+        String choixUtilisateurX;
+        String choixUtilisateurY;
         System.out.println("valeur de X ?");
-        X = choix.nextInt();
+        choixUtilisateurX = choix.next();//On récupère X de l'utilisateur
+        int X = Integer.parseInt(choixUtilisateurX);
         System.out.println("Valeur de Y ?");
-        Y = choix.nextInt();
-        if(plateau[X][Y] == "# " ){
-            System.out.println("impossible");
-        }
-        else{
+        choixUtilisateurY = choix.next();//On récupère Y de l'utilisateur
+        int Y = Integer.parseInt(choixUtilisateurY);
+        if( X<0 || X>9 || Y<0 || Y>10 ){
+            System.out.println("La case demandée n'existe pas");
+            } else if(plateau[X][Y] != "☐ "){
+            System.out.println("La case n'est pas disponible");
+        }else{
             plateau[X][Y] = "# ";
         }
 
