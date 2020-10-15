@@ -142,7 +142,7 @@ public class Mouvement {
                                     break;
                                 }else{
                                     plateau[i][j] = "☐ ";
-                                    plateau[i - 1][j] = "X ";
+                                    plateau[i - 1][j] = "O ";
                                 }
                             }
                         }
@@ -160,7 +160,7 @@ public class Mouvement {
                                     break;
                                 } else{
                                     plateau[i][j] = "☐ ";
-                                    plateau[i][j - 1] = "X ";
+                                    plateau[i][j - 1] = "O ";
                                     break;
                                 }
                             }
@@ -180,7 +180,7 @@ public class Mouvement {
                                     break;
                                 } else {
                                     plateau[i][j] = "☐ ";
-                                    plateau[i + 1][j] = "X ";
+                                    plateau[i + 1][j] = "O ";
                                     stop++;
                                 }
                             }
@@ -199,7 +199,7 @@ public class Mouvement {
                                     break;
                                 } else{
                                     plateau[i][j] = "☐ ";
-                                    plateau[i][j + 1] = "X ";
+                                    plateau[i][j + 1] = "O ";
                                     break;
                                 }
                             }
