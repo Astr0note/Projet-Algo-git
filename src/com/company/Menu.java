@@ -37,7 +37,7 @@ public class Menu{
                     break;
                 case 4:
                     //ajouter Fonction Quittez
-                    break;
+                    System.exit(0);
 
                 default:
                     System.out.println("/!\\  Choix incorrect, veuillez choisir une option entre 1 et 4. /!\\  ");
