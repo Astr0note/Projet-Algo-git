@@ -16,7 +16,7 @@ public class Mouvement {
         int stop;
         int i;
         int j;
-
+        System.out.println("Déplacer vous avec Z/Q/S/D");
         déplacement = mouvementUtilisateur.next();
 
         if ((déplacement.matches("^[zqsdZQSD].*"))) {
@@ -124,11 +124,12 @@ public class Mouvement {
         int stop;
         int i;
         int j;
-
+        System.out.println("Déplacer vous avec Z/Q/S/D");
         déplacement = mouvementUtilisateur.next();
 
-        if ((déplacement.matches("^[zqsdZQSDm].*"))) {
+        if ((déplacement.matches("^[zqsdZQSDmM].*"))) {
             String déplacer = déplacement.toLowerCase();
+            if ((déplacement.matches("^[mM].*")))
             switch (déplacer) {
                 case "z":
                     //L'utilisateur choisi z pour aller vers le haut
