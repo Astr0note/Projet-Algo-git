@@ -109,6 +109,11 @@ public class game {
 
     }
 
+    /**
+     * Détruis une case du plateau après le tour du joueur
+     * @param plateau
+     * @return le plateau + une case détruite
+     */
     public static String[][] Destruction(String[][] plateau){
         int X; int Y;
         Scanner choix = new Scanner(System.in);
