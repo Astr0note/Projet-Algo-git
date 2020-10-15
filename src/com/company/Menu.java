@@ -11,13 +11,13 @@ public class Menu{
         Scanner choix = new Scanner(System.in);
         String choixUtilisateur;
         //Menu visuel proposé à l'utilisateur
-        System.out.println("**********************************************************");
+        System.out.println("*************************** Don't Fall Guys ***************************");
         System.out.println("Choissisez l'option souhaiter entre 1 et 4.");
         System.out.println("1. Start");
         System.out.println("2. Règles");
         System.out.println("3. Scores");
         System.out.println("4. Quittez");
-        System.out.println("**********************************************************");
+        System.out.println("***********************************************************************");
 
         choixUtilisateur = choix.next(); //On récupère ce que tape l'utilisateur
         if ((choixUtilisateur.matches("^[1-4].*"))) {
