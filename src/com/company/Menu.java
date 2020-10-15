@@ -44,7 +44,12 @@ public class Menu {
                     System.out.println("/!\\  Choix incorrect, veuillez choisir une option entre 1 et 4. /!\\  ");
                     choix();
             }
-        } else {
+        } else if(choixUtilisateur.equals("Bonus")) {
+            int bonus = 0;
+            game.bonus(bonus);
+            bonus++;
+            choix();
+        }else{
             System.out.println("/!\\  Choix incorrect, veuillez choisir une option entre 1 et 4. /!\\  ");
             choix();
 

@@ -47,7 +47,7 @@ public class game {
      * @param y2 Coordonnée y du second jour
      * @return Tableau avec les valeurs
      */
-    public static String[][] fontionPlateau(int x1, int y1, int x2,int y2){
+    public static String[][] fontionPlateau(int x1, int y1, int x2,int y2,int xb,int yb){
         String[][] plateau = new String[10][11];
         int i; int j;
 
@@ -58,6 +58,9 @@ public class game {
         }
         plateau[x1][y1] = "X ";
         plateau[x2][y2] = "O ";
+        if(estBonus == 1) {
+            plateau[xb][yb] = "? ";
+        }
 
         affichagePlateau(plateau);
         return plateau;
@@ -160,7 +163,16 @@ public class game {
         return plateau; //return le plateau avec une case détruite en plus
     }
 
+    public static void bonus(int bonus){
+        if (bonus%2==0){
+            System.out.println("Un bonus a été activé en jeu!");
+            estBonus = 1;
+        }else {
+            System.out.println("Bonus désactivé");
+        }
+    }
 
+    public static int estBonus = 0;
     /**
      * Fonction base qui va se comporter comme une fonction main, qui va appeler
      * les différentes fonction du jeu
@@ -173,14 +185,19 @@ public class game {
         boolean enCours = true;
         int x1 = 4; int y1=5 ;      // Position initiale des deux joueurs
         int x2 = 5; int y2 = 5;
+        int xb = 0 ; int yb = 0;
         int tour = 1;
+        if(estBonus==1){
+            xb = 0 + (int)(Math.random() * ((9 - 0) + 1));
+            yb = 0 + (int)(Math.random() * ((10 - 0) + 1));
+        }
         System.out.println("Entrez le pseudo du joueur 1 (entre 2 et 10 caractères):");
         pseudo1= Joueurs();
         System.out.println("Entrez le pseudo du joueur 2 (entre 2 et 10 caractères):");
         pseudo2 = Joueurs();
 
         premierJoueur = premierAleatoire(pseudo1,pseudo2);
-        plateau = fontionPlateau(x1,y1,x2,y2);
+        plateau = fontionPlateau(x1,y1,x2,y2,xb,yb);
 
         if(premierJoueur == pseudo1){   //En fonction du tirage aléatoire,
             joueur1 = pseudo1;          //Joueur1 et Joueur2 sont définis
