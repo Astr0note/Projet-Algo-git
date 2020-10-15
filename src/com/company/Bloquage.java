@@ -16,7 +16,7 @@ public class Bloquage {
         boolean bloque = false;
         String joueur2 = "O ";
         String joueur1 = "X ";
-        String caseDetruite = "# ";
+        String caseDetruite = "  ";
         String caseGauche = "";
         String caseDroit = "";
         String caseHaute = "";

@@ -153,7 +153,7 @@ public class game {
                 System.out.println("/! La case n'est pas disponible !/"); //Que la case soit disponible (ni un joueur ni une case détruite)
                 Destruction(plateau);
             } else {
-                plateau[X][Y] = "# "; //On détruis la case
+                plateau[X][Y] = "  "; //On détruis la case
             }
         }else {
             System.out.println("/! Erreur, veuillez bien insérer des coordonnées !/"); //Erreur dans la saisie X Y

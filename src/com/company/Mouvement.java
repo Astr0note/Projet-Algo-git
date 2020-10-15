@@ -6,7 +6,7 @@ public class Mouvement {
     public static String[][] mouvementJoueur1(String[][] plateau) {
         Scanner mouvementUtilisateur = new Scanner(System.in);
         String déplacement;
-        String caseDetruite = "# ";
+        String caseDetruite = "  ";
         String caseGauche = "";
         String caseDroit = "";
         String caseHaute = "";
@@ -150,7 +150,7 @@ public class Mouvement {
     public static String[][] mouvementJoueur2(String[][] plateau) {
         Scanner mouvementUtilisateur = new Scanner(System.in);
         String déplacement;
-        String caseDetruite = "# ";
+        String caseDetruite = "  ";
         String caseGauche = "";
         String caseDroit = "";
         String caseHaute = "";
