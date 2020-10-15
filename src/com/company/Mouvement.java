@@ -63,7 +63,7 @@ public class Mouvement {
                                        mouvementJoueur1(plateau);
                                        break;
                                                } else {
-                                       if (plateau[i - 1][j].equals("? ")) {
+                                       if (plateau[i][j-1].equals("? ")) {
                                            System.out.println("Vous avez découvert la case bonus");
                                            System.out.println("Vous gagnez une destruction de case supplémentaire");
                                            game.Destruction(plateau);
@@ -92,7 +92,7 @@ public class Mouvement {
                                            mouvementJoueur1(plateau);
                                            break;
                                        } else {
-                                           if (plateau[i - 1][j].equals("? ")) {
+                                           if (plateau[i + 1][j].equals("? ")) {
                                                System.out.println("Vous avez découvert la case bonus");
                                                System.out.println("Vous gagnez une destruction de case supplémentaire");
                                                game.Destruction(plateau);
@@ -119,7 +119,7 @@ public class Mouvement {
                                                mouvementJoueur1(plateau);
                                                break;
                                            } else {
-                                               if (plateau[i - 1][j].equals("? ")) {
+                                               if (plateau[i][j+1].equals("? ")) {
                                                    System.out.println("Vous avez découvert la case bonus");
                                                    System.out.println("Vous gagnez une destruction de case supplémentaire");
                                                    game.Destruction(plateau);
@@ -206,7 +206,7 @@ public class Mouvement {
                                     mouvementJoueur2(plateau);
                                     break;
                                 } else{
-                                    if (plateau[i - 1][j].equals("? ")) {
+                                    if (plateau[i][j-1].equals("? ")) {
                                         System.out.println("Vous avez découvert la case bonus");
                                         System.out.println("Vous gagnez une destruction de case supplémentaire");
                                         game.Destruction(plateau);
@@ -234,7 +234,7 @@ public class Mouvement {
                                     mouvementJoueur2(plateau);
                                     break;
                                 } else {
-                                    if (plateau[i - 1][j].equals("? ")) {
+                                    if (plateau[i + 1][j].equals("? ")) {
                                         System.out.println("Vous avez découvert la case bonus");
                                         System.out.println("Vous gagnez une destruction de case supplémentaire");
                                         game.Destruction(plateau);
@@ -261,7 +261,7 @@ public class Mouvement {
                                     mouvementJoueur2(plateau);
                                     break;
                                 } else{
-                                    if (plateau[i - 1][j].equals("? ")) {
+                                    if (plateau[i][j+1].equals("? ")) {
                                         System.out.println("Vous avez découvert la case bonus");
                                         System.out.println("Vous gagnez une destruction de case supplémentaire");
                                         game.Destruction(plateau);
