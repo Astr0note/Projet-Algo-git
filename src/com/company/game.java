@@ -119,21 +119,29 @@ public class game {
         Scanner choix = new Scanner(System.in);
         String choixUtilisateurX;
         String choixUtilisateurY;
+
         System.out.println("valeur de X ?");
         choixUtilisateurX = choix.next();//On récupère X de l'utilisateur
-        int X = Integer.parseInt(choixUtilisateurX);
         System.out.println("Valeur de Y ?");
         choixUtilisateurY = choix.next();//On récupère Y de l'utilisateur
-        int Y = Integer.parseInt(choixUtilisateurY);
-        if( X<0 || X>9 || Y<0 || Y>10 ){
-            System.out.println("La case demandée n'existe pas");
-            } else if(plateau[X][Y] != "☐ "){
-            System.out.println("La case n'est pas disponible");
-        }else{
-            plateau[X][Y] = "# ";
+        if(choixUtilisateurX.matches("^[0-9].*") && choixUtilisateurY.matches("^[0-9].*")) {
+            int X = Integer.parseInt(choixUtilisateurX); //On vérifie que les valeurs soient bien des chiffres
+            int Y = Integer.parseInt(choixUtilisateurY);
+            if (X < 0 || X > 9 || Y < 0 || Y > 10) { //Que la valeur existe bien dans le tableau
+                System.out.println("La case demandée n'existe pas");
+                Destruction(plateau);
+            } else if (plateau[X][Y] != "☐ ") {
+                System.out.println("La case n'est pas disponible"); //Que la case soit disponible (ni un joueur ni une case détruite)
+                Destruction(plateau);
+            } else {
+                plateau[X][Y] = "# "; //On détruis la case
+            }
+        }else {
+            System.out.println("Erreur, veuillez bien insérer des coordonnées"); //Erreur dans la saisie X Y
+            Destruction(plateau);
         }
 
-        return plateau;
+        return plateau; //return le plateau avec une case détruite en plus
     }
 
 
