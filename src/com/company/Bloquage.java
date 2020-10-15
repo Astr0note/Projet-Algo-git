@@ -33,26 +33,74 @@ public class Bloquage {
                          caseBas = Plateau[i + 1][j];
                     }else {     //Si le joueur est proche d'un bord, la case adjacente est considérée comme une case détruite, en fonction de
                                 //la position du joueur
-                        if (j == 10) {
+                        if(j == 10 && i == 0){
+                            caseDroit = caseDetruite;
+                            caseGauche = Plateau[i][j - 1];
+                            caseHaute = caseDetruite;
+                            caseBas = Plateau[i + 1][j];
+                        }
+                        if(j == 10 && i == 9){
+                            caseDroit = caseDetruite;
+                            caseGauche = Plateau[i][j - 1];
+                            caseHaute = Plateau[i - 1][j];
+                            caseBas = caseDetruite;
+                        }
+                        if (j == 10 && i!=0 && i!=9) {
                              caseDroit = caseDetruite;
                              caseGauche = Plateau[i][j - 1];
                              caseHaute = Plateau[i - 1][j];
                              caseBas = Plateau[i + 1][j];
                         }
-                        if (j == 0) {
+                        if(j == 0 && i == 0){
+                            caseGauche = caseDetruite;
+                            caseHaute = caseDetruite;
+                            caseBas = Plateau[i + 1][j];
+                            caseDroit = Plateau[i][j + 1];
+                        }
+                        if(j == 0 && i == 9){
+                            caseGauche = caseDetruite;
+                            caseHaute = Plateau[i - 1][j];
+                            caseBas = caseDetruite;
+                            caseDroit = Plateau[i][j + 1];
+                        }
+                        if (j == 0 && i!=0 && i!=9) {
                              caseGauche = caseDetruite;
                              caseHaute = Plateau[i - 1][j];
                              caseBas = Plateau[i + 1][j];
                              caseDroit = Plateau[i][j + 1];
 
                         }
-                        if (i == 9) {
+                        if (i == 9 && j == 0){
+                            caseBas = caseDetruite;
+                            caseDroit = Plateau[i][j + 1];
+                            caseHaute = Plateau[i - 1][j];
+                            caseGauche = caseDetruite;
+                        }
+                        if (i == 9 && j == 10){
+                            caseBas = caseDetruite;
+                            caseDroit = caseDetruite;
+                            caseHaute = Plateau[i - 1][j];
+                            caseGauche = Plateau[i][j - 1];
+                        }
+                        if (i == 9 && j!=0 && j!=10) {
                              caseBas = caseDetruite;
                              caseDroit = Plateau[i][j + 1];
                              caseHaute = Plateau[i - 1][j];
                              caseGauche = Plateau[i][j - 1];
                         }
-                        if (i == 0) {
+                        if (i==0 && j == 0){
+                            caseHaute = caseDetruite;
+                            caseDroit = Plateau[i][j + 1];
+                            caseGauche = caseDetruite;
+                            caseBas = Plateau[i + 1][j];
+                        }
+                        if(i==0 && j == 10){
+                            caseHaute = caseDetruite;
+                            caseDroit = caseDetruite;
+                            caseGauche = Plateau[i][j - 1];
+                            caseBas = Plateau[i + 1][j];
+                        }
+                        if (i == 0 && j!=0 && j!= 10) {
                              caseHaute = caseDetruite;
                              caseDroit = Plateau[i][j + 1];
                              caseGauche = Plateau[i][j - 1];
@@ -113,26 +161,74 @@ public class Bloquage {
                         caseBas = Plateau[i + 1][j];
                     }else {     //Si le joueur est proche d'un bord, la case adjacente est considérée comme une case détruite, en fonction de
                                 //la position du joueur
-                        if (j == 10) {
+                        if(j == 10 && i == 0){
+                            caseDroit = caseDetruite;
+                            caseGauche = Plateau[i][j - 1];
+                            caseHaute = caseDetruite;
+                            caseBas = Plateau[i + 1][j];
+                        }
+                        if(j == 10 && i == 9){
+                            caseDroit = caseDetruite;
+                            caseGauche = Plateau[i][j - 1];
+                            caseHaute = Plateau[i - 1][j];
+                            caseBas = caseDetruite;
+                        }
+                        if (j == 10 && i!=0 && i!=9) {
                             caseDroit = caseDetruite;
                             caseGauche = Plateau[i][j - 1];
                             caseHaute = Plateau[i - 1][j];
                             caseBas = Plateau[i + 1][j];
                         }
-                        if (j == 0) {
+                        if(j == 0 && i == 0){
+                            caseGauche = caseDetruite;
+                            caseHaute = caseDetruite;
+                            caseBas = Plateau[i + 1][j];
+                            caseDroit = Plateau[i][j + 1];
+                        }
+                        if(j == 0 && i == 9){
+                            caseGauche = caseDetruite;
+                            caseHaute = Plateau[i - 1][j];
+                            caseBas = caseDetruite;
+                            caseDroit = Plateau[i][j + 1];
+                        }
+                        if (j == 0 && i!=0 && i!=9) {
                             caseGauche = caseDetruite;
                             caseHaute = Plateau[i - 1][j];
                             caseBas = Plateau[i + 1][j];
                             caseDroit = Plateau[i][j + 1];
 
                         }
-                        if (i == 9) {
+                        if (i == 9 && j == 0){
+                            caseBas = caseDetruite;
+                            caseDroit = Plateau[i][j + 1];
+                            caseHaute = Plateau[i - 1][j];
+                            caseGauche = caseDetruite;
+                        }
+                        if (i == 9 && j == 10){
+                            caseBas = caseDetruite;
+                            caseDroit = caseDetruite;
+                            caseHaute = Plateau[i - 1][j];
+                            caseGauche = Plateau[i][j - 1];
+                        }
+                        if (i == 9 && j!=0 && j!=10) {
                             caseBas = caseDetruite;
                             caseDroit = Plateau[i][j + 1];
                             caseHaute = Plateau[i - 1][j];
                             caseGauche = Plateau[i][j - 1];
                         }
-                        if (i == 0) {
+                        if (i==0 && j == 0){
+                            caseHaute = caseDetruite;
+                            caseDroit = Plateau[i][j + 1];
+                            caseGauche = caseDetruite;
+                            caseBas = Plateau[i + 1][j];
+                        }
+                        if(i==0 && j == 10){
+                            caseHaute = caseDetruite;
+                            caseDroit = caseDetruite;
+                            caseGauche = Plateau[i][j - 1];
+                            caseBas = Plateau[i + 1][j];
+                        }
+                        if (i == 0 && j!=0 && j!= 10) {
                             caseHaute = caseDetruite;
                             caseDroit = Plateau[i][j + 1];
                             caseGauche = Plateau[i][j - 1];
