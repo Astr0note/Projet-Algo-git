@@ -94,13 +94,13 @@ public class game {
 
             if (tour%2 == 1){ //Les tours impairs = joueur1. Les tours pairs = joueur2
                 System.out.println("C'est à "+joueur1+" de jouer");
+                Plateau = Mouvement.mouvementJoueur1(Plateau);
+                affichagePlateau(Plateau);
             }else{
                 System.out.println("C'est à "+joueur2+" de jouer");
+                Plateau = Mouvement.mouvementJoueur2(Plateau);
+                affichagePlateau(Plateau);
             }
-
-            //here : Fonction déplacement de Mathis
-            Plateau = Mouvement.mouvemement(Plateau);
-            affichagePlateau(Plateau);
 
             Plateau = Destruction(Plateau);
             affichagePlateau(Plateau);
