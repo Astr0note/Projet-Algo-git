@@ -127,7 +127,7 @@ public class Mouvement {
 
         déplacement = mouvementUtilisateur.next();
 
-        if ((déplacement.matches("^[zqsdZQSD].*"))) {
+        if ((déplacement.matches("^[zqsdZQSDm].*"))) {
             String déplacer = déplacement.toLowerCase();
             switch (déplacer) {
                 case "z":
@@ -137,7 +137,7 @@ public class Mouvement {
                         for (j = 0; j < 11; j++) {
                             if (plateau[i][j] == joueur2) {
                                 if ( (i == 0) || (plateau[i - 1][j] == caseDetruite) || (plateau[i-1][j] == joueur1)){
-                                    System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                    System.out.println("impossible d'aller sur la case demandé ! déplacer vous la ou c'est possible");
                                     mouvementJoueur2(plateau);
                                     break;
                                 }else{
@@ -155,7 +155,7 @@ public class Mouvement {
                         for (j = 0; j < 11; j++) {
                             if (plateau[i][j] == joueur2) {
                                 if((j == 0) || (plateau[i][j-1] == caseDetruite) || (plateau[i][j-1] == joueur1)) {
-                                    System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                    System.out.println("impossible d'aller sur la case demandé ! déplacer vous la ou c'est possible");
                                     mouvementJoueur2(plateau);
                                     break;
                                 } else{
@@ -175,7 +175,7 @@ public class Mouvement {
                         for (j = 0; j < 11; j++) {
                             if (plateau[i][j] == joueur2 && stop == 0) {
                                 if ( (i == 9) || (plateau[i + 1][j] == caseDetruite) || (plateau[i+1][j] == joueur1) ){
-                                    System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                    System.out.println("impossible d'aller sur la case demandé ! déplacer vous la ou c'est possible");
                                     mouvementJoueur2(plateau);
                                     break;
                                 } else {
@@ -194,7 +194,7 @@ public class Mouvement {
                         for (j = 0; j < 11; j++) {
                             if (plateau[i][j] == joueur2) {
                                 if ( (j == 10) || (plateau[i][j+1] == caseDetruite) || (plateau[i][j+1] == joueur1)) {
-                                    System.out.println("La case ou vous souhaitez aller est détruite ou hors limite ! déplacer vous la ou c'est possible");
+                                    System.out.println("impossible d'aller sur la case demandé ! déplacer vous la ou c'est possible");
                                     mouvementJoueur2(plateau);
                                     break;
                                 } else{
