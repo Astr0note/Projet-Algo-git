@@ -100,11 +100,11 @@ public class game {
         }else { //Le joueur peut jouer
 
             if (tour%2 == 1){ //Les tours impairs = joueur1. Les tours pairs = joueur2
-                System.out.println("C'est à "+joueur1+" de jouer");
+                System.out.println("C'est à "+joueur1+" de jouer ( X )");
                 Plateau = Mouvement.mouvementJoueur1(Plateau);
                 affichagePlateau(Plateau);
             }else{
-                System.out.println("C'est à "+joueur2+" de jouer");
+                System.out.println("C'est à "+joueur2+" de jouer ( O )");
                 Plateau = Mouvement.mouvementJoueur2(Plateau);
                 affichagePlateau(Plateau);
             }
