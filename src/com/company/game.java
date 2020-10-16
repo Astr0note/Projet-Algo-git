@@ -127,17 +127,17 @@ public class game {
         String choixUtilisateurX;
         String choixUtilisateurY;
 
-        System.out.println("**********************************************************");
-        System.out.println("phase de destruction");
-        System.out.println("**********************************************************");
-        System.out.println("quel case voulez vous détruire ?");
-        System.out.println("valeur de Y ?");
+        System.out.println("***********************");
+        System.out.println("Phase de destruction");
+        System.out.println("***********************");
+        System.out.println("Quelle case voulez-vous détruire?");
+        System.out.println("Valeur de Y?");
         choixUtilisateurX = choix.next();//On récupère X de l'utilisateur
         if ((choixUtilisateurX.matches("^[mM].*"))) {
             String Quittez = choixUtilisateurX.toLowerCase();
             Quit.quittez();
         }
-        System.out.println("Valeur de X ?");
+        System.out.println("Valeur de X?");
         choixUtilisateurY = choix.next();//On récupère Y de l'utilisateur
         if ((choixUtilisateurY.matches("^[mM].*"))) {
             String Quittez = choixUtilisateurY.toLowerCase();
@@ -163,6 +163,10 @@ public class game {
         return plateau; //return le plateau avec une case détruite en plus
     }
 
+    /**
+     * Si la fonction bonus est activée, une case supplémentaire apparait dans l'initialisation du tableau
+     * @param bonus
+     */
     public static void bonus(int bonus){
         if (bonus%2==0){
             System.out.println("Un bonus a été activé en jeu!");
@@ -171,25 +175,28 @@ public class game {
             System.out.println("Bonus désactivé");
         }
     }
-
     public static int estBonus = 0;
+
+
     /**
      * Fonction base qui va se comporter comme une fonction main, qui va appeler
      * les différentes fonction du jeu
      */
     public static void base(){
-
         String pseudo1; String pseudo2;String premierJoueur;
         String joueur1; String joueur2;
         String[][] plateau;
-        boolean enCours = true;
         int x1 = 4; int y1=5 ;      // Position initiale des deux joueurs
         int x2 = 5; int y2 = 5;
         int xb = 0 ; int yb = 0;
         int tour = 1;
-        if(estBonus==1){
+        if(estBonus==1){    //Si bonus actif, initialise les coordonnées du bonus
             xb = 0 + (int)(Math.random() * ((9 - 0) + 1));
             yb = 0 + (int)(Math.random() * ((10 - 0) + 1));
+            if( ( (xb == x1) && (yb == y1) ) || ( (xb == x2) && (yb == y2) ) ){ //Si on tombe sur un joueur, relance le random
+                xb = 0 + (int)(Math.random() * ((9 - 0) + 1));
+                yb = 0 + (int)(Math.random() * ((10 - 0) + 1));
+            }
         }
         System.out.println("Entrez le pseudo du joueur 1 (entre 2 et 10 caractères):");
         pseudo1= Joueurs();
@@ -207,7 +214,7 @@ public class game {
             joueur2 = pseudo1;
         }
 
-        while(tour>0) {
+        while(tour>0) {     //Compte le nombre de tours, qui définit quel joueur joue et fais boucler la fonction déplacement
             deplacement(plateau, joueur1, joueur2, tour);
             tour++;
         }

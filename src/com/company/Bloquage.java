@@ -33,74 +33,74 @@ public class Bloquage {
                          caseBas = Plateau[i + 1][j];
                     }else {     //Si le joueur est proche d'un bord, la case adjacente est considérée comme une case détruite, en fonction de
                                 //la position du joueur
-                        if(j == 10 && i == 0){
+                        if(j == 10 && i == 0){ //Si on est dans le coin Haut Droit
                             caseDroit = caseDetruite;
                             caseGauche = Plateau[i][j - 1];
                             caseHaute = caseDetruite;
                             caseBas = Plateau[i + 1][j];
                         }
-                        if(j == 10 && i == 9){
+                        if(j == 10 && i == 9){  //Si on est dans le coin Bas Droit
                             caseDroit = caseDetruite;
                             caseGauche = Plateau[i][j - 1];
                             caseHaute = Plateau[i - 1][j];
                             caseBas = caseDetruite;
                         }
-                        if (j == 10 && i!=0 && i!=9) {
+                        if (j == 10 && i!=0 && i!=9) {  //Si on est pas dans un coin mais tout à Droite
                              caseDroit = caseDetruite;
                              caseGauche = Plateau[i][j - 1];
                              caseHaute = Plateau[i - 1][j];
                              caseBas = Plateau[i + 1][j];
                         }
-                        if(j == 0 && i == 0){
+                        if(j == 0 && i == 0){   //Si on est dans le coin Haut Gauche
                             caseGauche = caseDetruite;
                             caseHaute = caseDetruite;
                             caseBas = Plateau[i + 1][j];
                             caseDroit = Plateau[i][j + 1];
                         }
-                        if(j == 0 && i == 9){
+                        if(j == 0 && i == 9){   //Si on est dans le coin Bas Gauche
                             caseGauche = caseDetruite;
                             caseHaute = Plateau[i - 1][j];
                             caseBas = caseDetruite;
                             caseDroit = Plateau[i][j + 1];
                         }
-                        if (j == 0 && i!=0 && i!=9) {
+                        if (j == 0 && i!=0 && i!=9) {   //Si on est pas dans un coin mais tout à Gauche
                              caseGauche = caseDetruite;
                              caseHaute = Plateau[i - 1][j];
                              caseBas = Plateau[i + 1][j];
                              caseDroit = Plateau[i][j + 1];
 
                         }
-                        if (i == 9 && j == 0){
+                        if (i == 9 && j == 0){  //Si on est dans le coin Bas Gauche
                             caseBas = caseDetruite;
                             caseDroit = Plateau[i][j + 1];
                             caseHaute = Plateau[i - 1][j];
                             caseGauche = caseDetruite;
                         }
-                        if (i == 9 && j == 10){
+                        if (i == 9 && j == 10){ //Si on est dans le coin Bas Droit
                             caseBas = caseDetruite;
                             caseDroit = caseDetruite;
                             caseHaute = Plateau[i - 1][j];
                             caseGauche = Plateau[i][j - 1];
                         }
-                        if (i == 9 && j!=0 && j!=10) {
+                        if (i == 9 && j!=0 && j!=10) {  //Si on est pas dans un coin mais tout en Bas
                              caseBas = caseDetruite;
                              caseDroit = Plateau[i][j + 1];
                              caseHaute = Plateau[i - 1][j];
                              caseGauche = Plateau[i][j - 1];
                         }
-                        if (i==0 && j == 0){
+                        if (i==0 && j == 0){    //Si on est dans le coin Haut Gauche
                             caseHaute = caseDetruite;
                             caseDroit = Plateau[i][j + 1];
                             caseGauche = caseDetruite;
                             caseBas = Plateau[i + 1][j];
                         }
-                        if(i==0 && j == 10){
+                        if(i==0 && j == 10){    //Si on est dans le coin Haut Droit
                             caseHaute = caseDetruite;
                             caseDroit = caseDetruite;
                             caseGauche = Plateau[i][j - 1];
                             caseBas = Plateau[i + 1][j];
                         }
-                        if (i == 0 && j!=0 && j!= 10) {
+                        if (i == 0 && j!=0 && j!= 10) { //Si on est pas dans un coin mais tout en Haut
                              caseHaute = caseDetruite;
                              caseDroit = Plateau[i][j + 1];
                              caseGauche = Plateau[i][j - 1];

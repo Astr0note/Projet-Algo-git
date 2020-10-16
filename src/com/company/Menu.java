@@ -7,16 +7,16 @@ public class Menu {
      * Affichage Menu avec différents choix
      */
     public static void choix() {
-        //On va créer le menu principal avec 4 options
+        //Menu principal avec 4 options
         Scanner choix = new Scanner(System.in);
-        String choixUtilisateur;
+        String choixUtilisateur;int bonus = 0;
         //Menu visuel proposé à l'utilisateur
         System.out.println("*************************** Don't Fall Guys ***************************");
-        System.out.println("Choissisez l'option souhaiter entre 1 et 4.");
+        System.out.println("Choissisez l'action souhaitée, entre 1 et 4.");
         System.out.println("1. Start");
         System.out.println("2. Règles");
         System.out.println("3. Scores");
-        System.out.println("4. Quittez");
+        System.out.println("4. Quitter");
         System.out.println("***********************************************************************");
 
         choixUtilisateur = choix.next(); //On récupère ce que tape l'utilisateur
@@ -24,20 +24,20 @@ public class Menu {
             int choixUser = Integer.parseInt(choixUtilisateur);
             switch (choixUser) { //En fonction de son choix on lance un cas différent
                 case 1:
-                    //ajouter Fonction démarrer
+                    //Fonction démarrer
                     game.base();    // Fichier du jeu
                     break;
                 case 2:
-                    //ajouter Fonction règles
+                    //Fonction règles
                     affichageRegles();
 
                     break;
                 case 3:
-                    //ajouter Fonction score
+                    //Fonction scores
                     affichageScore();
                     break;
                 case 4:
-                    //ajouter Fonction Quittez
+                    //Fonction Quitter
                     System.exit(0);
 
                 default:
@@ -45,9 +45,7 @@ public class Menu {
                     choix();
             }
         } else if(choixUtilisateur.equals("Bonus") || choixUtilisateur.equals("bonus")) {
-            int bonus = 0;
-            game.bonus(bonus);
-            bonus++;
+            game.bonus(bonus); //Si l'utilisateur tape bonus/Bonus, un bonus est ajouté au jeu principal
             choix();
         }else{
             System.out.println("/!\\  Choix incorrect, veuillez choisir une option entre 1 et 4. /!\\  ");
@@ -73,6 +71,12 @@ public class Menu {
     }
     public static String un = " ",deux= " ",trois= " ",quatre= " ",cinq= " ",six= " ",sept= " ",huit= " ",neuf= " ",dix= " ";
 
+    /**
+     * Fonction de stocking des derniers vainqueurs des 10 dernières parties
+     * @param tour Pour savoir quel joueur a gagné
+     * @param Joueur1
+     * @param Joueur2
+     */
     public static void score(int tour, String Joueur1, String Joueur2) {
         if (tour%2 ==1){
             if (un == " "){
